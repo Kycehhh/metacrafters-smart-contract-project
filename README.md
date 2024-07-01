@@ -1,65 +1,54 @@
-# SmartContract-ErrorHandling
-
-A Solidity smart contract demonstrating the use of `require()`, `assert()`, and `revert()` statements for error handling.
+# RecipeManager Smart Contract
 
 ## Description
 
-This project includes a smart contract written in Solidity that handles common error scenarios using `require()`, `assert()`, and `revert()`. The contract, `ErrorHandling.sol`, provides basic functionalities to deposit and withdraw funds, reset the balance, and intentionally trigger an error. This serves as a practical example of error handling in Ethereum smart contracts.
+The RecipeManager smart contract allows users to manage recipes securely on the Ethereum blockchain. It provides functionalities for adding, updating, and removing recipes, with access control to ensure only the contract owner can perform these actions.
 
 ## Getting Started
 
 ### Installing
 
-To get started with this project, you can clone the repository from GitHub:
-
-```sh
-git clone https://github.com/yourusername/SmartContract-ErrorHandling.git
+Clone the repository:
+```bash
+git clone https://github.com/qeewpi/metacrafters-smart-contract-project
 ```
-
-No additional modifications are needed to run the smart contract.
 
 ### Executing program
 
-You can deploy and interact with the smart contract using Remix IDE:
+1. Compile the smart contract using your preferred development environment (e.g., Remix, Hardhat, Truffle).
+2. Deploy the smart contract to a local blockchain (e.g., Ganache) or a test network (e.g., Ropsten).
 
-1. **Open Remix IDE**: Go to [Remix IDE](https://remix.ethereum.org/).
-2. **Create a new file**: Name it `ErrorHandling.sol`.
-3. **Copy and paste the code**: Copy the code from `ErrorHandling.sol` in this repository and paste it into your new file in Remix.
-4. **Compile the contract**: Use the Solidity compiler in Remix to compile the contract.
-5. **Deploy the contract**: Deploy the contract to your preferred Ethereum network using the Remix deployment tab.
+### Example Workflow
 
-To interact with the contract, use the provided functions:
+#### Adding a Recipe
 
 ```solidity
-// Deposit funds
-deposit(uint amount)
+// Example of adding a recipe
+contract.addRecipe("Chocolate Cake", ["Chocolate", "Flour", "Sugar", "Eggs", "Butter"], ["Mix ingredients", "Bake in oven", "Cool and serve"]);
+```
 
-// Withdraw funds
-withdraw(uint amount)
+#### Updating a Recipe
 
-// Reset balance
-resetBalance()
+```solidity
+// Example of updating a recipe
+contract.updateRecipe(1, "Dark Chocolate Cake", ["Dark Chocolate", "Flour", "Sugar", "Eggs", "Butter"], ["Mix ingredients", "Bake in preheated oven", "Cool and serve"]);
+```
 
-// Force an error
-forceError()
+#### Removing a Recipe
+
+```solidity
+// Example of removing a recipe
+contract.removeRecipe(2);
 ```
 
 ## Help
 
-For any issues or common problems, refer to the Remix documentation or check for common Solidity errors.
-
-If you need additional help, you can use the following command in Remix to get more information:
-
-```
-remix:help
-```
+For any issues or questions, please contact [asrmanalo@mymail.mapua.edu.ph].
 
 ## Authors
 
-Contributors names and contact info
-
-Ashley Manalo
-[@qeewpi](https://github.com/qeewpi)
+- [Ashley Manalo]
+- [asrmanalo@mymail.mapua.edu.ph]
 
 ## License
 
