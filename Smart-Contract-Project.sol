@@ -18,8 +18,9 @@ contract RecipeManager {
         _;
     }
 
-    constructor() {
-        owner = msg.sender;
+    constructor(address _owner) {
+        require(_owner != address(0), "Owner address cannot be the zero address");
+        owner = _owner;
         nextRecipeId = 1; // Start recipe IDs from 1
     }
 
