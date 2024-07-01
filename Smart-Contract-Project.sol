@@ -25,11 +25,18 @@ contract RecipeManager {
     }
 
     // Function to add a new recipe
-    function addRecipe(string memory name, string[] memory ingredients, string[] memory steps) public onlyOwner {
+    function addRecipe(string memory name, string[] memory ingredients, string[] memory steps) public {
+        // Ensure only the contract owner can add new recipes
+        if (msg.sender != owner) {
+            revert("Only the owner can add new recipes");
+        }
+    
+        // Check that all required parameters are provided
         require(bytes(name).length > 0, "Recipe name must not be empty");
         require(ingredients.length > 0, "Ingredients list must not be empty");
         require(steps.length > 0, "Steps list must not be empty");
-
+    
+        // Store the new recipe in the recipes mapping
         recipes[nextRecipeId] = Recipe(name, ingredients, steps, true);
         nextRecipeId++;
     }
